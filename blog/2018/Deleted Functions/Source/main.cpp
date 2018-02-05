@@ -11,7 +11,7 @@
 #include "NotCopyableClass.hpp"
 // Second Case
 #include "ForbidCallWithDifferentTypes.hpp"
-// Third Case
+// Test case on a class hierarchy
 #include "SimpleHierarchy.hpp"
 
 int main(int argc, const char * argv[]) {
@@ -36,7 +36,7 @@ int main(int argc, const char * argv[]) {
         callWithDifferentTypes.Print(34.0f);
         //callWithDifferentTypes.Print((double)34.0f); //Error: Call to deleted member function 'Print'
 
-    //Third case: Deletion of methods in inherited classes
+    //Test case: Deletion of methods in inherited classes
         SimpleHierarchy_Parent base;
         SimpleHierarchy_Inherited inherited;
         SimpleHierarchy_Parent* pbaseToInherited = &inherited;
