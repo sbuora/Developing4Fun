@@ -2,3 +2,4 @@
 .DS_Store
 *.xcuserstate
 xcschememanagement.plist
+*.xcworkspacedata
