@@ -18,3 +18,7 @@ void ForbidCallWithDifferentTypes::Print(float f) {
 //    std::cout << "integer: " << i << std::endl;
 //}
 
+void ForbidCallWithDifferentTypes::OnlyInt(int i) {
+    std::cout << "only Int: " << i << std::endl;
+}
+

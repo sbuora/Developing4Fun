@@ -29,12 +29,22 @@ int main(int argc, const char * argv[]) {
     // Second case: avoid unwanted C++ standard conversion in order to allow method calls.
         // In that example you can think about a class supposed to work on float only
         // and that want to force code float only due to some hardwarre constraints..
-        // the first call to member function Print won't compile due ti the deletion of the Print(double) overload
+        // the first call to member function Print won't compile due to the deletion of the Print(double) overload
+        // e.g: void Print(double d) = delete;
         ForbidCallWithDifferentTypes callWithDifferentTypes;
         //callWithDifferentTypes.Print(34.0);  //Error: Call to deleted member function 'Print'
         callWithDifferentTypes.Print((float)34.0); //that compiles
         callWithDifferentTypes.Print(34.0f);
         //callWithDifferentTypes.Print((double)34.0f); //Error: Call to deleted member function 'Print'
+
+        //  following a post on stackoverflow post https://stackoverflow.com/questions/5513881/meaning-of-delete-after-function-declaration
+        // I tested a template solution to forbid all kind of standard conversion if needed
+        // it's a more concise way to allow just a type and do not worry about all conversion rules.
+        // e.g:     template<typename T> void OnlyInt(T t) = delete;
+        callWithDifferentTypes.OnlyInt(12);
+        //callWithDifferentTypes.OnlyInt(12.0); // Error: Call to deleted member function 'OnlyInt'
+        //callWithDifferentTypes.OnlyInt(12.f); // Error: Call to deleted member function 'OnlyInt'
+        //callWithDifferentTypes.OnlyInt(12U); // Error: Call to deleted member function 'OnlyInt'
 
     //Test case: Deletion of methods in inherited classes
         SimpleHierarchy_Parent base;

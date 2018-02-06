@@ -21,6 +21,9 @@ public:
     void Print(float f);
     // commented out, code left for your test
     // void Print(int i);
+
+    void OnlyInt(int i);
+    template<typename T> void OnlyInt(T t) = delete;
 };
 
 #endif /* ForbidCallWithDifferentTypes_hpp */
