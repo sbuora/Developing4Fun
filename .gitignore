@@ -3,3 +3,6 @@
 *.xcuserstate
 xcschememanagement.plist
 *.xcworkspacedata
+.vs/
+*.obj
+Debug/
