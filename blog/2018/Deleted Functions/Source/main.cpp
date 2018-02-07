@@ -62,7 +62,9 @@ int main(int argc, const char * argv[]) {
         // that, in any case, is calling the parent version of 'memberFunction' that is still defined.
         pbaseToInherited->memberFunction();
     
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    // wait for an int...mainly for VStudio needs (it would close the console before reading it)
+    std::cout << "Type an int to end the program: " << std::endl;
+    int justAWait;
+    std::cin >> justAWait;
     return 0;
 }
