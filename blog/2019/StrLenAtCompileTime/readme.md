@@ -1,7 +1,7 @@
 # Developing for fun
 ## C++: Compute strlen at compile time
 
-Article: http://stefano.buora.it/wp/2018/02/c-deleted-functions
+Article: http://stefano.buora.it/wp/2019/09/c-compute-string…-at-compile-time/
 
 Website: www.developing4fun.com
 
