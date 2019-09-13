@@ -35,7 +35,7 @@ int main()
 	constexpr int dlen_rec = length_rec(DSTR);
 	constexpr int clen_rec = length_rec(cstr);
 
-	const int olen = length_rec(ostr.c_str());
+	const int olen = length_rec(ostr.c_str()); // this is the only one that cannot solved at compile time
 
 	std::cout << "cstr : " << clen_rec << "\n";
 	std::cout << "ostr : " << olen << "\n";
