@@ -18,7 +18,7 @@ constexpr size_t length(char const (&)[N])
 	return N - 1;
 }
 
-// more functional solution (it doesn't get converted in debug though)
+// more functional solution (it doesn't get resolved in compile time in debug though)
 int constexpr length_rec(const char* str)
 {
 	return *str ? 1 + length_rec(str + 1) : 0;
