@@ -29,7 +29,7 @@ int main()
 {
 	constexpr int alen = length(astr);
 	constexpr int dlen = length(DSTR);
-	// constexpr int clen = length(cstr); - DOESN'T WORK - const char* type is not const char [] anymore.
+	// constexpr int clen = length(cstr); - DOESN'T WORK - const char* type is not const char []
 
 	constexpr int alen_rec = length_rec(astr);
 	constexpr int dlen_rec = length_rec(DSTR);
