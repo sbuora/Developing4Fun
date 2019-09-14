@@ -18,7 +18,7 @@ constexpr size_t length(char const (&)[N])
 	return N - 1;
 }
 
-// more functional solution (it doesn't get resolved in compile time in debug though)
+// more functional solution (it's still a function call in Debug on MS VS Community 2015 - x86 target) 
 int constexpr length_rec(const char* str)
 {
 	return *str ? 1 + length_rec(str + 1) : 0;
@@ -29,7 +29,7 @@ int main()
 {
 	constexpr int alen = length(astr);
 	constexpr int dlen = length(DSTR);
-	// constexpr int clen = length(cstr); - DOESN'T WORK - const char* type is not const char []
+	// constexpr int clen = length(cstr); - DOESN'T COMPILE - const char* type is not const char []
 
 	constexpr int alen_rec = length_rec(astr);
 	constexpr int dlen_rec = length_rec(DSTR);
